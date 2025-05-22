@@ -14,7 +14,7 @@ def run_with_pty(input):
     output = os.read(fd, 1024);
     for ch in input:
         os.write(fd, bytes((ch,)))
-        time.sleep(0.001)
+        time.sleep(0.02)
     output += os.read(fd, 1024)
 
     os.waitid(os.P_ALL, 0, os.WEXITED)
